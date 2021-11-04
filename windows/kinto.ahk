@@ -220,7 +220,7 @@ GroupAdd, intellij, ahk_exe idea64.exe
     ^+Up::Send ^+{Home}
     ^Down::Send ^{End}
     ^+Down::Send ^+{End}
-    $^Backspace::Send +{Home}{Delete}
+    $^Backspace::Send {Delete}
     !Backspace::Send ^{Backspace}
     !Left::Send ^{Left}
     !+Left::Send ^+{Left}
@@ -455,8 +455,9 @@ GroupAdd, intellij, ahk_exe idea64.exe
         #k::Send +{End}{Backspace}
     #If
 
-    ; Cmd+Space Alternative
-    $^Space::Send ^{Esc}
+    ; Cmd+Space Alternative 
+    $#Space::Send ^{Esc}
+    $^Space::Send #{Space} 
 
     #IfWinActive ahk_group intellij
         ; $#c::Send ^{c}                  ; Default - Sigints interrupt
